@@ -1,16 +1,11 @@
-export default (articles) => {
-    return articles;
-};
-
 // export default (articles) => {
-//  return [{
-//     id: 1,
-//     title: "toto",
-//     content: "content of toto"
-// }, {
-//     id: 2,
-//     title: "toto2",
-//     content: "content of toto2"
-// }];
-    
-// }
+//     return articles;
+// };
+
+export default (articles, { text }) => {
+    return articles.filter((article) => {
+        const textMatch = article.title.toLowerCase().includes(text.toLowerCase());
+
+        return textMatch;
+    });
+};

@@ -21,7 +21,7 @@ export const ArticlesList = (props) => (
 
 const mapStateToProps = (state) => {
     return {
-        articles: selectArticles(state.articles)
+        articles: selectArticles(state.articles, state.filters)
     };
 };
 

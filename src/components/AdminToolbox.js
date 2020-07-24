@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ArticleListFilters from './ArticleListFilters';
 
 const AdminToolbox = () => (
     <div>
-        <input value="search"></input>
+        <ArticleListFilters />
         <Link className="button" to="/create">Create new</Link>
     </div>
 );
