@@ -6,8 +6,7 @@ import { startAddArticle } from '../actions/articles';
 
 export class AdminCreateNew extends React.Component {
     onSubmit = (article) => {
-        console.log(article);
-        this.props.startAddArticle(article);
+        this.props.startAddArticle(article, article.tags = ['none']);
         this.props.history.push('/');
     }
 

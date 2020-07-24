@@ -6,6 +6,7 @@ import HomePage from '../components/HomePage';
 import AdminPage from '../components/AdminPage';
 import AdminEdit from '../components/AdminEdit';
 import AdminCreateNew from '../components/AdminCreateNew';
+import ArticlePage from '../components/ArticlePage';
 import NotFoundPage from '../components/NotFoundPage';
 // import PrivateRoute from './PrivateRoute';
 // import PublicRoute from './PublicRoute';
@@ -21,6 +22,7 @@ const AppRouter = () => (
                 <Route path="/admin" exact={true} component={AdminPage}/>
                 <Route path="/create" exact={true} component={AdminCreateNew}/>
                 <Route path="/edit/:id" component={AdminEdit}/>
+                <Route path="/article/:id" component={ArticlePage}/>
                 <Route component={NotFoundPage}></Route>
             </Switch>
         </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import selectArticles from '../selectors/articles';
 import ArticlesListItem from './ArticlesListItem';
@@ -12,7 +13,9 @@ export const ArticlesList = (props) => (
                 </div>
             ) : (
                 props.articles.map((article) => (
-                    <ArticlesListItem key={article.id} {...article} />
+                    <Link key={article.id} className="list-item" to={`article/${article.id}`}>
+                        <ArticlesListItem key={article.id} {...article} />
+                    </Link>
                 ))
             )
         }

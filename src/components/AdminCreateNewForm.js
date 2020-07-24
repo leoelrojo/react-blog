@@ -9,7 +9,7 @@ export default class AdminCreateNewForm extends React.Component {
             id: props.article ? props.article.id: '',
             title: props.article ? props.article.title: '',
             content: props.article ? props.article.content: '',
-            tags: props.article ? props.article.tags: ['none']
+            tags: props.article ? props.article.tags: []
         };
     }
 

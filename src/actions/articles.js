@@ -8,13 +8,14 @@ export const addArticle = (article) => ({
 
 export const startAddArticle = (articleData = {}) => {
     return (dispatch, getState) => {
-        const uid = getState().auth.uid;
+        //const uid = getState().auth.uid;
         const {
-            title = '', 
+            title = '',
             content = '',
-            tags = ['none']
+            tags = []
         } = articleData;
-        const article = { title, content, tags };
+
+        const article = { title, content, tags }; 
 
         return database.ref('articles').push(article).then((ref) => {
             dispatch(addArticle({
@@ -34,7 +35,7 @@ export const editArticle = (id, updates) => ({
 
 export const startEditArticle = (id, updates) => {
     return (dispatch, getState) => {
-        const uid = getState().auth.uid;
+        //const uid = getState().auth.uid;
         //return database.ref(`users/${uid}/article/${id}`).update(updates).then(() => {
         return database.ref(`articles/${id}`).update(updates).then(() => {    
             dispatch(editArticle(id, updates));

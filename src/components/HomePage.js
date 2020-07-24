@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from '../components/Header'
-import ArticlesList from './ArticlesList'
+import Header from '../components/Header';
+import ArticlesList from './ArticlesList';
 
 const HomePage = () => (
     <div>
         <Header />
-        <ArticlesList />
+            <ArticlesList />
     </div>
 );
 
