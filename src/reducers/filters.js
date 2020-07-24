@@ -1,7 +1,6 @@
-// Filters Reducer
-
 const filtersReducerDefaultState = {
-    text: ''
+    text: '',
+    tags: ''
 };
 
 export default (state = filtersReducerDefaultState, action) => {
@@ -10,7 +9,12 @@ export default (state = filtersReducerDefaultState, action) => {
             return {
                 ...state,
                 text: action.text
-            };                      
+            };          
+        case 'SET_TAGS_FILTER':
+            return {
+                ...state,
+                tags: action.tags
+            };
         default:
             return state;
     }

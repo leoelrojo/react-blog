@@ -14,6 +14,7 @@ import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
 import { firebase } from './firebase/firebase';
 import LoadingPage from './components/LoadingPage';
+import "@pathofdev/react-tag-input/build/index.css";
 
 moment.updateLocale('fr', localization);
 

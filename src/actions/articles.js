@@ -11,12 +11,12 @@ export const startAddArticle = (articleData = {}) => {
         const uid = getState().auth.uid;
         const {
             title = '', 
-            content = ''     
+            content = '',
+            tags = ['none']
         } = articleData;
-        const article = { title, content };
+        const article = { title, content, tags };
 
         return database.ref('articles').push(article).then((ref) => {
-            console.log("pouet");
             dispatch(addArticle({
                 id: ref.key,
                 ...article

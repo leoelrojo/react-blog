@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactTagInput from "@pathofdev/react-tag-input";
 
 export default class AdminCreateNewForm extends React.Component {
     constructor(props) {
@@ -7,7 +8,8 @@ export default class AdminCreateNewForm extends React.Component {
         this.state = {
             id: props.article ? props.article.id: '',
             title: props.article ? props.article.title: '',
-            content: props.article ? props.article.content: ''
+            content: props.article ? props.article.content: '',
+            tags: props.article ? props.article.tags: ['none']
         };
     }
 
@@ -26,7 +28,8 @@ export default class AdminCreateNewForm extends React.Component {
 
         this.props.onSubmit({
             title: this.state.title,
-            content: this.state.content
+            content: this.state.content,
+            tags: this.state.tags
         });
     }
 
@@ -41,6 +44,11 @@ export default class AdminCreateNewForm extends React.Component {
     onBack = (e) => {
         e.preventDefault();
         this.props.onBack();
+    }
+
+    onTagsChange = (newTags) => {
+        const tags = newTags;
+        this.setState(() => ({ tags }));
     }
 
     render () {
@@ -62,6 +70,13 @@ export default class AdminCreateNewForm extends React.Component {
                         onChange={this.onContentChange}
                     >
                     </textarea>
+                    <ReactTagInput
+                        placeholder="Tag(s)"
+                        editable={true}
+                        removeOnBackspace={true}
+                        tags={this.state.tags}
+                        onChange={(newTags) => this.onTagsChange(newTags)}
+                    />
                     <button>{this.props.ctaText}</button>
                 </form>
                 { 
