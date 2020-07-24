@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactTagInput from "@pathofdev/react-tag-input";
+import CKEditor from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 export default class AdminCreateNewForm extends React.Component {
     constructor(props) {
@@ -51,6 +53,11 @@ export default class AdminCreateNewForm extends React.Component {
         this.setState(() => ({ tags }));
     }
 
+    onContentChange2 = (event, editor) => {
+        const content = editor.getData();
+        this.setState(() => ({ content }));
+    }
+
     render () {
         return (
             <div>
@@ -70,6 +77,17 @@ export default class AdminCreateNewForm extends React.Component {
                         onChange={this.onContentChange}
                     >
                     </textarea>
+                    <CKEditor
+                        editor={ ClassicEditor }
+                        data="<p>Yo!</p>"
+                        onInit={ editor => {
+                            console.log("ready");
+                        }}
+                        onChange={(event, editor) => {
+                            const content = editor.getData();
+                            this.setState(() => ({ content }));
+                        }}
+                    />
                     <ReactTagInput
                         placeholder="Tag(s)"
                         editable={true}
