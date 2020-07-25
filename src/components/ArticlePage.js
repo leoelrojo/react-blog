@@ -7,7 +7,7 @@ const ArticlePage = (props) => (
     <div>
         <Header />
         <h1>{props.article.title}</h1>
-        <div>{ props.article.content }</div>
+        <div dangerouslySetInnerHTML={{ __html: props.article.content }}/>
         { props.article.tags.map((tag) => (
             <Chip key={tag} variant='outlined' size='small' label={tag}/>
         ))}
