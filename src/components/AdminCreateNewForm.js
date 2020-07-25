@@ -2,6 +2,7 @@ import React from 'react';
 import ReactTagInput from "@pathofdev/react-tag-input";
 import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { Button } from 'react-bootstrap';
 
 export default class AdminCreateNewForm extends React.Component {
     constructor(props) {
@@ -95,16 +96,16 @@ export default class AdminCreateNewForm extends React.Component {
                         tags={this.state.tags}
                         onChange={(newTags) => this.onTagsChange(newTags)}
                     />
-                    <button>{this.props.ctaText}</button>
+                    <Button type="submit" variant="primary" size="lg" active>{this.props.ctaText}</Button>
                 </form>
                 { 
                     this.props.ctaText==="Edit article" ?
                         <form className="form" onSubmit={this.onRemove}>
-                            <button>Remove</button>
+                            <Button type="submit" variant="danger" size="lg" active>Remove</Button>
                         </form>
                     :
                         <form className="form" onSubmit={this.onBack}>
-                            <button>Back</button>
+                            <Button type="submit" variant="outline-secondary" size="lg" active>Back</Button>
                         </form>
                         
                 } 
