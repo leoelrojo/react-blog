@@ -10,10 +10,10 @@ export const Header = ({ startLogin }, { isAuthenticated }) => (
             <Link className="header__title" to="/">
                 <h1>My beautiful blog</h1>
             </Link>
-            <Link className="button button--link" to="/admin">
+            <Link className="buttonCustom button--link" to="/admin">
                 <p>Admin</p>
             </Link>
-            <Link className="button button--link" to="/login">
+            <Link className="buttonCustom button--link" to="/login">
                 <p>Login</p>
             </Link>
         </div>

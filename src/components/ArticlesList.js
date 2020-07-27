@@ -14,7 +14,7 @@ export const ArticlesList = (props) => {
     const currentArticles = props.articles.slice(indexOfFirstArticle, indexOfLastArticle);
 
     return (
-        <div>
+        <div className="articles-container">
             <Container>
                 <Row>
                     <Col>
@@ -25,7 +25,7 @@ export const ArticlesList = (props) => {
                                 </div>
                             ) : (
                                 currentArticles.map((article) => (
-                                    <Link key={article.id} className="list-item" to={`article/${article.id}`}>
+                                    <Link key={article.id} className="list-item articles-container__list-item" to={`article/${article.id}`}>
                                         <ArticlesListItem key={article.id} {...article} />
                                     </Link>
                                 ))

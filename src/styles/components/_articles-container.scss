@@ -1,0 +1,7 @@
+.articles-container {
+    margin-top: $s-size;
+}
+
+.articles-container__list-item:first-child {
+    border-top: solid $border-color 1px;
+}

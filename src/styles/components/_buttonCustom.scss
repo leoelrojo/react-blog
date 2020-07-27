@@ -1,4 +1,4 @@
-.button {
+.buttonCustom {
     background: $blue;
     border: none;
     color: white;
@@ -10,10 +10,10 @@
     text-decoration: none;
 }
 
-.button--link {
+.buttonCustom--link {
     background: none;
 }
 
-.button--secondary {
+.buttonCustom--secondary {
     background: #888888
 }
