@@ -88,6 +88,13 @@ export default class AdminCreateNewForm extends React.Component {
                             const content = editor.getData();
                             this.setState(() => ({ content }));
                         }}
+                        config={
+                            {
+                                ckfinder: {
+                                    uploadUrl:'/upload'
+                                }
+                            }
+                        }
                     />
                     <ReactTagInput
                         placeholder="Tag(s)"
